@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
 @property (strong, nonatomic) NSArray *images;
 
 @property (nonatomic)CGFloat imageOriginX;
@@ -35,12 +37,13 @@
         view.frame = frame;
         view.contentMode = UIViewContentModeScaleAspectFit;
         view.userInteractionEnabled = YES;
+        
         //tap recognition for the detailed view for each image
         UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToDetailedView:)];
         [view addGestureRecognizer:tapper];
         
+        //lastly, add the image to the UIScrollView, and increment the x position for use in placing the next image
         [self.scrollView addSubview:view];
-        
         self.imageOriginX += CGRectGetWidth(self.view.frame);
     }
     
@@ -48,7 +51,7 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.contentSize = CGSizeMake([self.images count] * CGRectGetWidth(self.view.frame), CGRectGetHeight(self.scrollView.frame));
     
-    
+    self.scrollView.delegate = self;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIImageView *)sender;
@@ -62,6 +65,7 @@
 
 - (void)tapToDetailedView:(UITapGestureRecognizer *)sender;
 {
+    //manually perform the segue defined in the Main storyboard
     [self performSegueWithIdentifier:@"toggleDetailedView" sender:sender.view];
 }
 
@@ -70,5 +74,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+{
+    /*
+     * Scroll to the next page on the page control indicators.
+     * Math sourced from:
+     * https://stackoverflow.com/questions/10198732/programmatically-linking-uipagecontrol-to-uiscrollview
+     */
+    NSInteger nextPage = floor(self.scrollView.contentOffset.x / scrollView.frame.size.width);
+    self.pageControl.currentPage = nextPage;
+}
 
 @end
