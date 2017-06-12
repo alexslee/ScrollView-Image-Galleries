@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mpg-Ka-n2v">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,6 +39,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Fh0-Vo-Mua">
+            <objects>
+                <viewController id="Mpg-Ka-n2v" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kb1-Yi-gOe"/>
+                        <viewControllerLayoutGuide type="bottom" id="wFq-Dr-jOF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o82-mu-ulq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unB-JU-5om">
+                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-Zm-6I6">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="666"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mOx-Zm-6I6" firstAttribute="leading" secondItem="unB-JU-5om" secondAttribute="leading" id="5fH-2f-B7u"/>
+                                    <constraint firstItem="mOx-Zm-6I6" firstAttribute="centerX" secondItem="unB-JU-5om" secondAttribute="centerX" id="C9j-0v-Hv4"/>
+                                    <constraint firstAttribute="bottom" secondItem="mOx-Zm-6I6" secondAttribute="bottom" id="Lw1-dZ-6BK"/>
+                                    <constraint firstItem="mOx-Zm-6I6" firstAttribute="top" secondItem="unB-JU-5om" secondAttribute="top" id="OGk-Og-CDR"/>
+                                    <constraint firstAttribute="trailing" secondItem="mOx-Zm-6I6" secondAttribute="trailing" id="QDk-95-zIg"/>
+                                    <constraint firstItem="mOx-Zm-6I6" firstAttribute="centerY" secondItem="unB-JU-5om" secondAttribute="centerY" id="hC1-8Z-g2c"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="unB-JU-5om" firstAttribute="height" secondItem="o82-mu-ulq" secondAttribute="height" id="BFd-RM-Qfh"/>
+                            <constraint firstItem="unB-JU-5om" firstAttribute="width" secondItem="o82-mu-ulq" secondAttribute="width" id="EPB-cB-xue"/>
+                            <constraint firstItem="unB-JU-5om" firstAttribute="top" secondItem="Kb1-Yi-gOe" secondAttribute="bottom" id="Kt6-4O-JpL"/>
+                            <constraint firstItem="unB-JU-5om" firstAttribute="centerX" secondItem="o82-mu-ulq" secondAttribute="centerX" id="bdx-hF-uaB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="mOx-Zm-6I6" id="Qf1-rk-ldx"/>
+                        <outlet property="scroll" destination="unB-JU-5om" id="Ajb-pb-dz3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpe-0s-N5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="70"/>
         </scene>
     </scenes>
 </document>

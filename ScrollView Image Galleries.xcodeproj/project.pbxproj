@@ -13,6 +13,7 @@
 		438D93BA1EEE7C5F0056E2A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438D93B81EEE7C5F0056E2A6 /* Main.storyboard */; };
 		438D93BC1EEE7C5F0056E2A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438D93BB1EEE7C5F0056E2A6 /* Assets.xcassets */; };
 		438D93BF1EEE7C5F0056E2A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438D93BD1EEE7C5F0056E2A6 /* LaunchScreen.storyboard */; };
+		438D93CB1EEF09680056E2A6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438D93CA1EEF09680056E2A6 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		438D93BB1EEE7C5F0056E2A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		438D93BE1EEE7C5F0056E2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		438D93C01EEE7C5F0056E2A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438D93C91EEF09680056E2A6 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		438D93CA1EEF09680056E2A6 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				438D93B31EEE7C5F0056E2A6 /* AppDelegate.m */,
 				438D93B51EEE7C5F0056E2A6 /* ViewController.h */,
 				438D93B61EEE7C5F0056E2A6 /* ViewController.m */,
+				438D93C91EEF09680056E2A6 /* DetailViewController.h */,
+				438D93CA1EEF09680056E2A6 /* DetailViewController.m */,
 				438D93B81EEE7C5F0056E2A6 /* Main.storyboard */,
 				438D93BB1EEE7C5F0056E2A6 /* Assets.xcassets */,
 				438D93BD1EEE7C5F0056E2A6 /* LaunchScreen.storyboard */,
@@ -153,6 +158,7 @@
 				438D93B71EEE7C5F0056E2A6 /* ViewController.m in Sources */,
 				438D93B41EEE7C5F0056E2A6 /* AppDelegate.m in Sources */,
 				438D93B11EEE7C5F0056E2A6 /* main.m in Sources */,
+				438D93CB1EEF09680056E2A6 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +315,7 @@
 				438D93C51EEE7C5F0056E2A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
