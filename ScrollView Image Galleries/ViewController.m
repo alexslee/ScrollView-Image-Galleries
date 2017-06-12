@@ -23,16 +23,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //initialize images array
     self.images = [[NSArray alloc] initWithObjects: [UIImage imageNamed:@"Lighthouse-in-Field"], [UIImage imageNamed:@"Lighthouse-night"], [UIImage imageNamed:@"Lighthouse-zoomed"], nil];
+    
     self.imageOriginX = 0;
     for (UIImage *image in self.images) {
-        CGRect frame = CGRectMake(self.imageOriginX, 0, CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
+        CGRect frame = CGRectMake(self.imageOriginX, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.scrollView.frame));
+        
         UIImageView *view = [[UIImageView alloc]initWithImage:image];
         view.frame = frame;
-        self.imageOriginX += CGRectGetWidth(self.scrollView.frame);
+        view.contentMode = UIViewContentModeScaleAspectFit;
+        
         [self.scrollView addSubview:view];
+        
+        self.imageOriginX += CGRectGetWidth(self.view.frame);
     }
-    self.scrollView.contentSize = CGSizeMake([self.images count] * CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.contentSize = CGSizeMake([self.images count] * CGRectGetWidth(self.view.frame), CGRectGetHeight(self.scrollView.frame));
     
     
 }
