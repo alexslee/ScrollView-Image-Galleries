@@ -85,4 +85,19 @@
     self.pageControl.currentPage = nextPage;
 }
 
+- (IBAction)scrollToNextPage:(UIPageControl *)sender {
+    /*
+     * Forces scrollview to go to the next/previous page based on where user tapped on the PageControl indicators.
+     * Math sourced from: 
+     * https://stackoverflow.com/questions/13854222/how-can-i-change-the-page-on-clicking-the-dots-of-uipagecontrol
+    */
+    UIPageControl *pager=sender;
+    int page = pager.currentPage;
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+}
+
+
 @end
