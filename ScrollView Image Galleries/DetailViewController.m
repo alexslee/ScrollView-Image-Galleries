@@ -26,6 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.scroll.maximumZoomScale = 5;
     self.scroll.minimumZoomScale = 1;
+    self.imageView.image = self.detailedImage;
 }
 
 - (void)didReceiveMemoryWarning {
