@@ -23,10 +23,24 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
+    //setup of the scrollview to allow for user zooming
     self.scroll.maximumZoomScale = 5;
     self.scroll.minimumZoomScale = 1;
+    
+    //default zoom level is fully zoomed out
+    self.scroll.zoomScale = 1;
+    
+    //prevent zooming past the bounds set above
+    self.scroll.bouncesZoom = NO;
+
     self.imageView.image = self.detailedImage;
+    self.scroll.contentSize = self.imageView.frame.size;
+    
+    //prevent distortion of image by scaling to fit the aspect ratio
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    self.scroll.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +51,11 @@
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;
 {
     return self.imageView;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale;
+{
+    
 }
 
 /*
